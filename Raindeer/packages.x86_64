@@ -48,6 +48,7 @@ lftp
 libfido2
 libusb-compat
 linux-zen
+linux-zen-headers
 linux-atm
 linux-firmware
 linux-firmware-marvell
@@ -73,6 +74,8 @@ nilfs-utils
 ntfs-3g
 nvme-cli
 open-iscsi
+openssh
+openvpn
 open-vm-tools
 openconnect
 partclone
@@ -118,3 +121,22 @@ fish
 arco-calamares
 calamares-config
 plasma-meta
+
+### Bluetooth
+
+bluez
+blueberry
+bluez-libs
+bluez-utils
+bluez-plugins
+bluez-hid2hci
+
+### Fonts
+
+asian-fonts
+ttf-fira-code
+otf-libertinus
+tex-gyre-fonts
+ttf-hack-nerd
+awesome-terminal-fonts
+adobe-source-sans-pro-fonts
