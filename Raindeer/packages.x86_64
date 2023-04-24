@@ -67,7 +67,6 @@ memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
-modemmanager
 mtools
 nbd
 ndisc6
@@ -120,6 +119,20 @@ wvdial
 xfsprogs
 xl2tpd
 nmap
+
+### Network Packages
+
+avahi
+nss-mdns
+mobile-broadband-provider-info
+networkmanager.
+modemmanager
+network-manager-applet
+networkmanager-openvpn
+networkmanager-openconnect
+networkmanager-vpnc
+networkmanager-pptp
+openresolv
 
 ### Bluetooth
 
