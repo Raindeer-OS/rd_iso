@@ -1,0 +1,10 @@
+NAME="Raindeer-OS"
+PRETTY_NAME="Raindeer-OS"
+ID=Raindeer-OS
+ID_LIKE=arch
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://github.com/Raindeer-OS/"
+LOGO=Raindeer-OS
+IMAGE_ID=Raindeer-OS
+IMAGE_VERSION=2023.04.25
