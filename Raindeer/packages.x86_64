@@ -119,6 +119,7 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
+nmap
 
 ### Bluetooth
 
