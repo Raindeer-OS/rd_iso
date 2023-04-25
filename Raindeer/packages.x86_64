@@ -118,15 +118,10 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
-nmap
 
 ### Network Packages
-
-avahi
 nss-mdns
-mobile-broadband-provider-info
-networkmanager.
-modemmanager
+networkmanager
 network-manager-applet
 networkmanager-openvpn
 networkmanager-openconnect
@@ -176,6 +171,7 @@ kitty
 alacritty
 konsole
 dolphin
+lf
 exa
 neofetch
 bat
