@@ -10,6 +10,7 @@ bind
 brltty
 broadcom-wl
 btrfs-progs
+coreutils
 clonezilla
 cloud-init
 cryptsetup
