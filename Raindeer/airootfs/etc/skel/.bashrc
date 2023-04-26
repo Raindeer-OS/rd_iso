@@ -72,26 +72,6 @@ alias fgrep='fgrep --color=auto'
 #readable output
 alias df='df -h'
 
-#keyboard
-alias give-me-azerty-be="sudo localectl set-x11-keymap be"
-alias give-me-qwerty-us="sudo localectl set-x11-keymap us"
-
-#setlocale
-alias setlocale="sudo localectl set-locale LANG=en_US.UTF-8"
-alias setlocales="sudo localectl set-x11-keymap be && sudo localectl set-locale LANG=en_US.UTF-8"
-
-#pacman unlock
-alias unlock="sudo rm /var/lib/pacman/db.lck"
-alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
-
-#arcolinux logout unlock
-alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
-
-#which graphical card is working
-alias whichvga="/usr/local/bin/arcolinux-which-vga"
-
-#free
-alias free="free -mt"
 
 #continue download
 alias wget="wget -c"
@@ -160,27 +140,13 @@ alias hw="hwinfo --short"
 #audio check pulseaudio or pipewire
 alias audio="pactl info | grep 'Server Name'"
 
-#skip integrity check
-alias paruskip='paru -S --mflags --skipinteg'
-alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
+
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
 
 #check cpu
 alias cpu="cpuid -i | grep uarch | head -n 1"
-
-#get fastest mirrors in your neighborhood
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-#our experimental - best option for the moment
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
-alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
 
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
@@ -198,12 +164,6 @@ shopt -s dotglob
 shopt -s histappend # do not overwrite history
 shopt -s expand_aliases # expand aliases
 
-#youtube download
-alias yta-aac="yt-dlp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
 
 #Recent Installed Packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
@@ -355,25 +315,7 @@ alias snapli="sudo snapper list"
 alias snapcr="sudo snapper -c root create"
 alias snapch="sudo snapper -c home create"
 
-#Leftwm aliases
-alias lti="leftwm-theme install"
-alias ltu="leftwm-theme uninstall"
-alias lta="leftwm-theme apply"
-alias ltupd="leftwm-theme update"
-alias ltupg="leftwm-theme upgrade"
 
-#arcolinux applications
-#att is a symbolic link now
-#alias att="archlinux-tweak-tool"
-alias adt="arcolinux-desktop-trasher"
-alias abl="arcolinux-betterlockscreen"
-alias agm="arcolinux-get-mirrors"
-alias amr="arcolinux-mirrorlist-rank-info"
-alias aom="arcolinux-osbeck-as-mirror"
-alias ars="arcolinux-reflector-simple"
-alias atm="arcolinux-tellme"
-alias avs="arcolinux-vbox-share"
-alias awa="arcolinux-welcome-app"
 
 #git
 alias rmgitcache="rm -r ~/.cache/git"

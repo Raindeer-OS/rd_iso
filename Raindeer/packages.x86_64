@@ -166,6 +166,10 @@ gsfonts
 gutenprint
 system-config-printer
 
+##### Wipe out the private files securely ##########
+
+secure-delete
+
 ########## Utilities ####################
 
 kitty
