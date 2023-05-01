@@ -1,11 +1,12 @@
 # System Packages
-
+archiso
 alsa-utils
 amd-ucode
 arch-install-scripts
 archinstall
 b43-fwcutter
 base
+base-devel
 bind
 brltty
 broadcom-wl
@@ -37,7 +38,6 @@ gpart
 gpm
 gptfdisk
 grml-zsh-config
-grub
 hdparm
 hyperv
 intel-ucode
@@ -111,7 +111,6 @@ udftools
 usb_modeswitch
 usbmuxd
 usbutils
-virtualbox-guest-utils-nox
 vpnc
 wireless-regdb
 wireless_tools
@@ -119,6 +118,13 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
+
+### Grub Stuff
+
+grub
+os-prober
+#grub-tools
+update-grub
 
 ### Network Packages
 nss-mdns
@@ -130,6 +136,46 @@ networkmanager-vpnc
 networkmanager-pptp
 openresolv
 
+### Virtual Machine
+spice-vdagent
+virtualbox-guest-utils
+
+
+### Video
+mesa
+autorandr
+xf86-video-qxl
+xf86-video-fbdev
+xf86-video-vmware
+xf86-video-openchrome
+
+### Multimedia
+ffmpeg
+ffmpegthumbs
+
+### File management
+gvfs
+mtpfs
+udiskie
+udisks2
+ldmtool
+gvfs-afc
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gvfs-gphoto2
+
+#######################################################
+###      PACKAGES THAT STAY AFTER INSTALLATION      ###
+#######################################################
+
+dex
+make
+xorg-xrdb
+xorg-xkill
+libxinerama
+bash-completion
+xterm
 ### Bluetooth
 
 bluez
@@ -141,37 +187,43 @@ bluez-hid2hci
 
 ### Fonts
 
-asian-fonts
-ttf-fira-code
-otf-libertinus
-tex-gyre-fonts
-ttf-hack-nerd
-awesome-terminal-fonts
-adobe-source-sans-pro-fonts
+#asian-fonts
+#ttf-fira-code
+#otf-libertinus
+#tex-gyre-fonts
+#ttf-hack-nerd
+#awesome-terminal-fonts
+#adobe-source-sans-pro-fonts
 
 ### Printers & Scanner support
 
-hplip-plugin
-print-manager
-printer-support
-scanner-support
+#hplip-plugin
+#print-manager
+#printer-support
+#scanner-support
 
 ### Basic printers packages
 
-cups
-cups-filters
-cups-pdf
-ghostscript
-gsfonts
-gutenprint
-system-config-printer
+#cups
+#cups-filters
+#cups-pdf
+#ghostscript
+#gsfonts
+#gutenprint
+#system-config-printer
 
 ##### Wipe out the private files securely ##########
 
-secure-delete
+#secure-delete
+
+# Btrfs stuff
+
+timeshift
+grub-btrfs
+timeshift-autosnap
 
 ########## Utilities ####################
-
+sddm
 kitty
 alacritty
 konsole
@@ -180,20 +232,118 @@ lf
 exa
 neofetch
 bat
+nano
 kate
 fish
 bash
 broot
-brave
-google-chrome
+#brave
+#google-chrome
 
-###xorg
-xorg-server
+# xorg
 xorg-apps
 xorg-xinit
+xorg-server
+
+### Plasma Stuff
+
+plasma-nm
+plasma-pa
+plasma-vault
+plasma-desktop
+plasma-framework
+plasma-workspace
+plasma-integration
+plasma-systemmonitor
+plasma-browser-integration
+
+# Packages that require to build
+
+kio
+ki18n
+solid
+xmlto
+ckbcomp
+kconfig
+kpmcore
+yaml-cpp
+boost-libs
+polkit-qt5
+kcoreaddons
+kiconthemes
+mkinitcpio-openswap
+gtk-update-icon-cache
+
+## Utilities
+
+ark
+kgpg
+kfind
+kcalc
+kdialog
+kalendar
+kmousetool
+ksystemlog
+khelpcenter
+kwallet-pam
+markdownpart
+kwalletmanager
+
+### Essentials
+
+kwin
+milou
+breeze
+kcrash
+drkonqi
+kgamma5
+kscreen
+khotkeys
+sddm-kcm
+kmenuedit
+ksysguard
+bluedevil
+kio-admin
+powerdevil
+libkscreen
+flatpak-kcm
+kinfocenter
+ksshaskpass
+kdecoration
+kglobalaccel
+libksysguard
+kscreenlocker
+xdg-user-dirs
+knotifications
+systemsettings
+packagekit-qt5
+layer-shell-qt
+kactivitymanagerd
+kdenetwork-filesharing
+xdg-desktop-portal-kde
+kde-dev-utils
+polkit-kde-agent
+kde-gtk-config
+kdeplasma-addons
 
 ###LUKS encryption
 #cryptsetup
+
+### Graphics
+
+svgpart
+gwenview
+spectacle
+kcolorchooser
+
+kwin-scripts-forceblur
+kdegraphics-thumbnailers
+
+## KDE-SDK
+
+lokalize
+dolphin-plugins
+kdesdk-thumbnailers
 
 ### System Utilities
 
@@ -268,9 +418,11 @@ dbus-python
 laptop-detect
 perl-xml-parser
 edid-decode-git
-hardcode-fixer-git
+#hardcode-fixer-git
 extra-cmake-modules
 
 ####### Raindeer-OS Build Packages ########################
 rd_calamares_config
+calamares-app
 rd_wallpapers
+rd_alacritty_config
