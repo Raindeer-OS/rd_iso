@@ -28,6 +28,8 @@ e2fsprogs
 edk2-shell
 efibootmgr
 espeakup
+gpart
+gparted
 ethtool
 exfatprogs
 f2fs-tools
@@ -67,6 +69,7 @@ memtest86+
 memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
+mkinitcpio-firmware
 mkinitcpio-nfs-utils
 mtools
 nbd
@@ -119,12 +122,16 @@ wvdial
 xfsprogs
 xl2tpd
 
-### Grub Stuff
+### ############################### Grub Stuff
+
 
 grub
+# For Dual Boot Support
 os-prober
-#grub-tools
-update-grub
+grub-tools
+default-grub-git
+#update-grub
+
 
 ### Network Packages
 nss-mdns
@@ -135,12 +142,9 @@ networkmanager-openconnect
 networkmanager-vpnc
 networkmanager-pptp
 openresolv
-
 ### Virtual Machine
 spice-vdagent
 virtualbox-guest-utils
-
-
 ### Video
 mesa
 autorandr
@@ -148,11 +152,9 @@ xf86-video-qxl
 xf86-video-fbdev
 xf86-video-vmware
 xf86-video-openchrome
-
 ### Multimedia
 ffmpeg
 ffmpegthumbs
-
 ### File management
 gvfs
 mtpfs
@@ -164,12 +166,13 @@ gvfs-mtp
 gvfs-nfs
 gvfs-smb
 gvfs-gphoto2
-
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
-#######################################################
-
+python
+python-pip
+#libpython
 dex
+bash
 make
 xorg-xrdb
 xorg-xkill
@@ -177,16 +180,13 @@ libxinerama
 bash-completion
 xterm
 ### Bluetooth
-
 bluez
 blueberry
 bluez-libs
 bluez-utils
 bluez-plugins
 bluez-hid2hci
-
 ### Fonts
-
 #asian-fonts
 #ttf-fira-code
 #otf-libertinus
@@ -194,159 +194,137 @@ bluez-hid2hci
 #ttf-hack-nerd
 #awesome-terminal-fonts
 #adobe-source-sans-pro-fonts
-
 ### Printers & Scanner support
-
 #hplip-plugin
 #print-manager
 #printer-support
 #scanner-support
-
 ### Basic printers packages
 
-#cups
-#cups-filters
-#cups-pdf
+cups-filters
+cups-pdf
 #ghostscript
 #gsfonts
 #gutenprint
 #system-config-printer
-
 ##### Wipe out the private files securely ##########
-
 #secure-delete
-
 # Btrfs stuff
-
 timeshift
 grub-btrfs
 timeshift-autosnap
 
 ########## Utilities ####################
-sddm
-kitty
-alacritty
-konsole
-dolphin
-lf
-exa
-neofetch
-bat
-nano
-kate
-fish
-bash
-broot
-#brave
-#google-chrome
-
-# xorg
+xorg
 xorg-apps
 xorg-xinit
 xorg-server
 
+
+
+
 ### Plasma Stuff
+plasma-nm        #Network manager for Plasma desktop.
+plasma-pa        #Plasma volume control.
+plasma-vault     #Plasma integration for creating encrypted vaults.
+plasma-desktop   #Plasma desktop environment.
+plasma-framework #Development files for Plasma framework.
+plasma-workspace #Core workspace components for the Plasma desktop.
+plasma-integration      #Integration plugins for various Qt/KDE frameworks.
+plasma-systemmonitor    #System monitor for the Plasma desktop.
+plasma-browser-integration #Integration of web browsers with Plasma.
 
-plasma-nm
-plasma-pa
-plasma-vault
-plasma-desktop
-plasma-framework
-plasma-workspace
-plasma-integration
-plasma-systemmonitor
-plasma-browser-integration
+###Packages that require building
 
-# Packages that require to build
+kio              #Network-transparent file management.
+ki18n            #KDE internationalization library.
+solid            #Hardware integration and detection library for KDE.
+xmlto            #Tool for converting XML files to various formats.
+ckbcomp          #Compiler for XKB databases.
+kconfig          #Framework for user configuration files.
+kpmcore          #Library for managing partitions.
+yaml-cpp         #YAML parser and emitter library
+boost-libs       #Boost libraries.
+polkit-qt5       #Qt5 wrapper for PolicyKit.
+kcoreaddons      #KDE core addons library.
+kiconthemes      #KDE icon theme support library.
+mkinitcpio-openswap #Script for adding open swap support to mkinitcpio.
+gtk-update-icon-cache #Icon theme caching utility for GTK+.
 
-kio
-ki18n
-solid
-xmlto
-ckbcomp
-kconfig
-kpmcore
-yaml-cpp
-boost-libs
-polkit-qt5
-kcoreaddons
-kiconthemes
-mkinitcpio-openswap
-gtk-update-icon-cache
+###Utilities
 
-## Utilities
+ark             #Archiving tool for KDE.
+kgpg            #Encryption tool for KDE.
+kfind           #File find utility for KDE.
+kcalc           #Calculator for KDE.
+kdialog         #Dialog display utility for KDE.
+kalendar        #Calendar application for KDE.
+kmousetool      #Automatic mouse click tool for KDE.
+ksystemlog      #System log viewer for KDE.
+khelpcenter     #Help center application for KDE.
+markdownpart    #KPart for rendering Markdown files in applications.
 
-ark
-kgpg
-kfind
-kcalc
-kdialog
-kalendar
-kmousetool
-ksystemlog
-khelpcenter
-kwallet-pam
-markdownpart
-kwalletmanager
+###Essentials
 
-### Essentials
-
-kwin
-milou
-breeze
-kcrash
-drkonqi
-kgamma5
-kscreen
-khotkeys
-sddm-kcm
-kmenuedit
-ksysguard
-bluedevil
-kio-admin
-powerdevil
-libkscreen
-flatpak-kcm
-kinfocenter
-ksshaskpass
-kdecoration
-kglobalaccel
-libksysguard
-kscreenlocker
-xdg-user-dirs
-knotifications
-systemsettings
-packagekit-qt5
-layer-shell-qt
-kactivitymanagerd
-kdenetwork-filesharing
-xdg-desktop-portal-kde
-kde-dev-utils
-polkit-kde-agent
-kde-gtk-config
-kdeplasma-addons
+kwin            #Window manager for KDE Plasma Desktop.
+milou           #Framework for displaying metadata.
+breeze          #Default Plasma theme.
+kcrash          #KDE crash handler.
+drkonqi         #KDE crash handler GUI.
+kgamma5         #Monitor gamma correction module for KDE.
+kscreen         #KDE screen management.
+khotkeys        #KDE global hotkeys configuration.
+sddm-kcm        #SDDM KDE Configuration Module.
+kmenuedit       #Menu editor for KDE.
+ksysguard       #System monitor for KDE.
+bluedevil       #KDE Bluetooth stack.
+kio-admin       #File manager plugins for root actions.
+powerdevil      #Power management module for KDE.
+libkscreen      #KDE screen management library.
+flatpak-kcm     #Flatpak integration for KDE.
+kinfocenter     #KDE information center.
+ksshaskpass     #SSH askpass utility for KDE.
+kdecoration     #Library for window decorations.
+kglobalaccel    #Global desktop keyboard shortcuts for KDE.
+libksysguard    #Library for managing processes, performance, and system information.
+kscreenlocker   #Library and components for secure lock screen architecture.
+xdg-user-dirs   #Tool to manage "well known" user directories.
+knotifications  #Desktop notifications framework.
+systemsettings  #KDE system settings application.
+packagekit-qt5  #Qt5 wrapper for PackageKit.
+layer-shell-qt  #Qt bindings for Layer Shell protocol.
+kactivitymanagerd          #System service to manage user's activities and track the usage patterns.
+kdenetwork-filesharing     #Samba filesharing dialog for KDE.
+xdg-desktop-portal-kde     #Backend implementation for xdg-desktop-portal in KDE.
+kde-dev-utils              #KDE development utilities.
+polkit-kde-agent           #Polkit authentication agent for KDE.
+kde-gtk-config             #GTK2 and GTK3 configuration for KDE.
+kdeplasma-addons           #Additional Plasma applets, data engines, and other plugins.
 
 ###LUKS encryption
-#cryptsetup
+
+cryptsetup #Utility for setting up encrypted filesystems.
 
 ### Graphics
+svgpart                     #SVG KPart.
+gwenview                    #Image viewer for KDE.
+spectacle                   #KDE screenshot capture utility.
+kcolorchooser               #Color chooser and palette editor for KDE.
+kwin-scripts-forceblur      #KWin script to add blur effects.
+kdegraphics-thumbnailers    #KDE thumbnail generator plugins for various graphic formats.
 
-svgpart
-gwenview
-spectacle
-kcolorchooser
+#KDE-SDK
 
-kwin-scripts-forceblur
-kdegraphics-thumbnailers
+lokalize                    #KDE translation tool.
+dolphin-plugins             #Plugins for the Dolphin file manager.
+kdesdk-thumbnailers         #KDE thumbnail generator plugins for development files.
 
-## KDE-SDK
+gtk-update-icon-cache       #Icon theme caching utility for GTK+.
+markdownpart                #KPart for rendering Markdown files in applications.
 
-lokalize
-dolphin-plugins
-kdesdk-thumbnailers
+
 
 ### System Utilities
-
 gcc
 git
 gts
@@ -421,8 +399,110 @@ edid-decode-git
 #hardcode-fixer-git
 extra-cmake-modules
 
+
 ####### Raindeer-OS Build Packages ########################
 rd_calamares_config
-calamares-app
+# calamares-app  // alci-calamares
+alci-calamares
 rd_wallpapers
-rd_alacritty_config
+#rd_alacritty_config
+chaotic-mirrorlist
+chaotic-keyring
+
+###########################################################################
+#                              CALAMARES DEPENDENCIES
+cups
+power-profiles-daemon
+firewalld
+xkeyboard-config
+upower
+kservice
+kwidgetsaddons
+#arcolinux-kpmcore
+libpwquality
+qt5-xmlpatterns
+adobe-source-han-sans-jp-fonts
+adobe-source-han-sans-kr-fonts
+adobe-source-han-sans-cn-fonts
+
+## QT5 packages
+
+qt5-3d
+qt5-svg
+qt5-base
+qt5-tools
+qt5-scxml
+qt5-lottie
+qt5-charts
+qt6-5compat
+qt5-sensors
+qt5-webview
+qt5-quick3d
+qt5-x11extras
+qt5-serialbus
+qt5-webengine
+qt5-datavis3d
+qt5-websockets
+qt5-webchannel
+qt5-serialport
+qt5-multimedia
+qt5-declarative
+qt5-networkauth
+qt5-xmlpatterns
+qt5-imageformats
+qt5-connectivity
+qt5-translations
+qt5-quicktimeline
+qt5-remoteobjects
+
+## System Tools
+
+sddm
+kitty
+#alacritty
+konsole
+dolphin
+lf
+exa
+neofetch
+bat
+nano
+kate
+fish
+bash
+broot
+#brave
+google-chrome
+rofi
+krunner
+fzf
+
+### Security Tools
+
+thehive     #A 4-in-1 security incident response platform.
+mozdef      #Automates security incident response processes.
+splunk      #Log management and analysis tool.
+siem        #Security solution for real-time event analysis and management.
+wireshark   #Network security monitoring tool for packet analysis.
+maltrail    #Detects malicious network traffic.
+yara        #Identifies malware samples and creates custom rules.
+wallarm     #Network defense tool for WAF, vulnerability scanning, and threat verification.
+snort       #IDS for real-time traffic analysis and packet logging.
+pfsense     #Server load balancing, NAT, and VPN for network security.
+ghidra      #Malware reverse engineering tool.
+modsecurity #WAF for protection against web-based attacks.
+cyberchef   #Tool for malware analysis and data manipulation.
+arkime      #Network packet capture and analysis
+malcolm     #Network traffic analysis tool suite
+ossec       #Host-based intrusion detection and log analysis system.
+zeek        #Network security monitoring tool for real-time analysis and protocol-level inspection.
+suricata    #High-performance network intrusion detection and prevention system.
+openvas     #Open Vulnerability Assessment System for vulnerability scanning and management.
+sysmon      #System monitoring tool for Windows that provides detailed event log information.
+
+##Scanning Tools
+nmap       #Network scanning tool for host and service discovery.
+nuclei     #Web application vulnerability scanner.
+nikto      #Open-source web vulnerability scanner.
+wpscan     #Security scanner for WordPress websites.
+
